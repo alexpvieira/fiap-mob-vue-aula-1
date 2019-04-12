@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <!-- versão de desenvolvimento, inclui avisos de console -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- versão de produção, otimizado para tamanho e velocidade -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+</head>
+<body>
+    <div id="app">
+        <h1>{{ number }}</h1>
+        <button v-on:click="number += 1">Add number</button>
+        <button @click="number -= 1">Remove number</button>
+
+        <span v-show="number >= 5">Number is equal or bigger than 5</span>
+        <span v-show="number < 5">Number is smaller than 5</span>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                number: 0
+            }
+        })
+    </script>
+</body>
+</html>

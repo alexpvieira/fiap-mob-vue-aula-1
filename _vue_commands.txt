@@ -1,0 +1,11 @@
+// Instalação global do Vue CLI
+npm install -g @vue/cli
+
+// Inicialização de um projeto Vue utilizando o Vue CLI
+vue create hello-world
+
+// Exibe o Vue UI
+vue ui
+
+// Vue Devtools
+https://github.com/vuejs/vue-devtools
