@@ -8,23 +8,17 @@
     
     <!-- versão de desenvolvimento, inclui avisos de console -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-    <!-- versão de produção, otimizado para tamanho e velocidade -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
 </head>
 <body>
     <div id="app">
-        <ul>
-            <li v-for="n in 10">
-                {{ n }}
-            </li>
-        </ul>
-
         <ul>
             <li v-for="framework in frameworks">
                 {{ framework }}
             </li>
         </ul>
+
+        <input v-model="new_item" />
+        <button @click="addItem()">Add item</button>
     </div>
 
     <script>
@@ -32,6 +26,12 @@
             el: '#app',
             data: {
                 frameworks: ['vue', 'react', 'angular']
+            },
+            methods: {
+                addItem() {
+                    frameworks.push(this.new_item)
+                    this.new_item = ''
+                }
             }
         })
     </script>
